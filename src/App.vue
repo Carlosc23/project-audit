@@ -5,46 +5,17 @@
       app
     >
       <v-list dense>
-        <v-list-item @click="">
+        <v-list-item  v-for="(item, index) in items"
+          :key="index"
+          :to="item.path">
           <v-list-item-action>
-            <v-icon>mdi-file-document-box-check-outline</v-icon>
+            <v-icon v-html="item.icon"></v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Chequeo de cumplimiento</v-list-item-title>
+            <v-list-item-title v-html="item.title"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="">
-          <v-list-item-action>
-            <v-icon>mdi-file-document-box-check-outline</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Chequeo de control</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item @click="">
-          <v-list-item-action>
-            <v-icon>mdi-file-document-box-check-outline</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Chequeo de dominio</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item @click="">
-          <v-list-item-action>
-            <v-icon>mdi-chart-bar</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Graficas</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item @click="">
-          <v-list-item-action>
-            <v-icon>mdi-book-search-outline</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Diccionario</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+       
       </v-list>
     </v-navigation-drawer>
 
@@ -68,7 +39,9 @@
         >
           <v-col class="text-center">
             
-
+<transition name="fade" mode="out-in">
+              <router-view></router-view>
+            </transition>
             
           </v-col>
         </v-row>
@@ -79,12 +52,51 @@
 </template>
 
 <script>
+import CheckList from "./components/CheckList";
+import ControlCheck from "./components/ControlCheck";
+import DomainCheck from "./components/DomainCheck";
+import Graphics from "./components/Graphics";
+import Dictionary from "./components/Dictionary";
   export default {
     props: {
       source: String,
     },
+    components: {
+    CheckList,
+    ControlCheck,
+    DomainCheck,
+    Graphics,
+    Dictionary 
+  },
     data: () => ({
       drawer: null,
+      items: [
+        {
+          path: "/",
+          title: "Chequeo de cumplimiento",
+          icon: "mdi-file-document-box-check-outline"
+        },
+        {
+          path: "/ControlCheck",
+          title: "Chequeo de control",
+           icon: "mdi-file-document-box-check-outline"
+        },
+        {
+          path: "/DomainCheck",
+          title: "Chequeo de dominio",
+          icon: "mdi-file-document-box-check-outline"
+        },
+        {
+          path: "/Graphics",
+          title: "Graficas",
+           icon: "mdi-chart-bar"
+        },
+        {
+          path: "/Dictionary",
+          title: "Diccionario",
+           icon: "mdi-book-search-outline"
+        }
+      ]
     }),
   }
 </script>
