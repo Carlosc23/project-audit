@@ -7,7 +7,7 @@
       <v-list dense>
         <v-list-item @click="">
           <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
+            <v-icon>mdi-file-document-box-check-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Chequeo de cumplimiento</v-list-item-title>
@@ -15,7 +15,7 @@
         </v-list-item>
         <v-list-item @click="">
           <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
+            <v-icon>mdi-file-document-box-check-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Chequeo de control</v-list-item-title>
@@ -23,7 +23,7 @@
         </v-list-item>
         <v-list-item @click="">
           <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
+            <v-icon>mdi-file-document-box-check-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Chequeo de dominio</v-list-item-title>
@@ -31,7 +31,7 @@
         </v-list-item>
         <v-list-item @click="">
           <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
+            <v-icon>mdi-chart-bar</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Graficas</v-list-item-title>
@@ -39,7 +39,7 @@
         </v-list-item>
         <v-list-item @click="">
           <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
+            <v-icon>mdi-book-search-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Diccionario</v-list-item-title>
