@@ -35,13 +35,30 @@
         <b-th rowspan="2">5.1.1</b-th>
         <b-td class="text-left" rowspan="2">Documento de la Política de Seguridad de Información</b-td>
         <b-td>Existe una Política de Seguridad de la Información, que es aprobada por la dirección, publicada y comunicada según proceda, a todos los empleados?</b-td>
-        <b-td></b-td>
-       <b-td variant="danger"></b-td>
+        <b-td>  <b-input-group size="lg" >
+    <b-form-input></b-form-input>
+  </b-input-group></b-td>
+       <b-td variant="danger">
+
+         <b-input-group size="sm" >
+    <b-form-input></b-form-input>
+  </b-input-group>
+       </b-td>
       </b-tr>
       <b-tr>
         <b-td class="text-right">Establecen las políticas un compromiso de las Gerencias con relación al método de la organización para la gestión de la seguridad de la información? </b-td>
-        <b-td></b-td>
-        <b-td variant="danger"></b-td>
+        <b-td>
+
+          <b-input-group size="lg" >
+    <b-form-input></b-form-input>
+  </b-input-group>
+        </b-td>
+        <b-td variant="danger">
+
+          <b-input-group size="sm" >
+    <b-form-input></b-form-input>
+  </b-input-group>
+        </b-td>
        
       </b-tr>
      
