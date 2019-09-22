@@ -1,142 +1,59 @@
 <template>
-  <v-container>
-    <v-layout
-      text-center
-      wrap
-    >
-      <v-flex xs12>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
-
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
-        </p>
-      </v-flex>
-
-      <v-flex
-        mb-5
-        xs12
-      >
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-
-      <v-flex
-        xs12
-        mb-5
-      >
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-
-      <v-flex
-        xs12
-        mb-5
-      >
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <div>
+  <b-table-simple hover small caption-top responsive>
+   <colgroup><col><col></colgroup>
+    <colgroup><col><col><col></colgroup>
+    <colgroup><col><col></colgroup>
+    <b-thead head-variant="dark">
+      <b-tr>
+        <b-th colspan="2">Referencia</b-th>
+        <b-th colspan="2">Area de Auditoría, objetivo y pregunta</b-th>
+        <b-th colspan="2">Resultado</b-th>
+      </b-tr>
+      <b-tr>
+        <b-th>Checklist </b-th>
+        <b-th>Estandar</b-th>
+        <b-th>Sección</b-th>
+        <b-th>Pregunta de Auditoría</b-th>
+        <b-th>Observaciones</b-th>
+        <b-th>Estado </b-th>
+      </b-tr>
+   
+    </b-thead>
+    <b-tbody>
+         <b-tr>
+        <b-th variant='success' class="text-left" colspan="7" >  Política de Seguridad </b-th>
+      </b-tr>
+      <b-tr>
+        <b-th >1.1</b-th>
+        <b-th >5.1</b-th>
+      
+         <b-th class="text-left" colspan="4">  Políticas de Seguridad de Información</b-th>
+      </b-tr>
+      <b-tr>
+        <b-th rowspan="2">1.1.1</b-th>
+        <b-th rowspan="2">5.1.1</b-th>
+        <b-td class="text-left" rowspan="2">Documento de la Política de Seguridad de Información</b-td>
+        <b-td>Existe una Política de Seguridad de la Información, que es aprobada por la dirección, publicada y comunicada según proceda, a todos los empleados?</b-td>
+        <b-td></b-td>
+       <b-td variant="danger"></b-td>
+      </b-tr>
+      <b-tr>
+        <b-td class="text-right">Establecen las políticas un compromiso de las Gerencias con relación al método de la organización para la gestión de la seguridad de la información? </b-td>
+        <b-td></b-td>
+        <b-td variant="danger"></b-td>
+       
+      </b-tr>
+     
+   
+    </b-tbody>
+    <b-tfoot>
+      <b-tr>
+        <b-td colspan="7" variant="secondary" class="text-right">
+          
+        </b-td>
+      </b-tr>
+    </b-tfoot>
+  </b-table-simple>
+</div>
 </template>
-
-<script>
-export default {
-  data: () => ({
-    ecosystem: [
-      {
-        text: 'vuetify-loader',
-        href: 'https://github.com/vuetifyjs/vuetify-loader',
-      },
-      {
-        text: 'github',
-        href: 'https://github.com/vuetifyjs/vuetify',
-      },
-      {
-        text: 'awesome-vuetify',
-        href: 'https://github.com/vuetifyjs/awesome-vuetify',
-      },
-    ],
-    importantLinks: [
-      {
-        text: 'Documentation',
-        href: 'https://vuetifyjs.com',
-      },
-      {
-        text: 'Chat',
-        href: 'https://community.vuetifyjs.com',
-      },
-      {
-        text: 'Made with Vuetify',
-        href: 'https://madewithvuejs.com/vuetify',
-      },
-      {
-        text: 'Twitter',
-        href: 'https://twitter.com/vuetifyjs',
-      },
-      {
-        text: 'Articles',
-        href: 'https://medium.com/vuetify',
-      },
-    ],
-    whatsNext: [
-      {
-        text: 'Explore components',
-        href: 'https://vuetifyjs.com/components/api-explorer',
-      },
-      {
-        text: 'Select a layout',
-        href: 'https://vuetifyjs.com/layout/pre-defined',
-      },
-      {
-        text: 'Frequently Asked Questions',
-        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-      },
-    ],
-  }),
-};
-</script>

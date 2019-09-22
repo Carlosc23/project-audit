@@ -100,3 +100,7 @@ import Dictionary from "./components/Dictionary";
     }),
   }
 </script>
+
+<style lang="scss">
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+</style>

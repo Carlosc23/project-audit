@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router'
+import BootstrapVue from 'bootstrap-vue'
 
 Vue.config.productionTip = false
+Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
