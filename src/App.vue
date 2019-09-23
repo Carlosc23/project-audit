@@ -33,21 +33,10 @@
 </template>
 
 <script>
-import CheckList from "./components/CheckList";
-import ControlCheck from "./components/ControlCheck";
-import DomainCheck from "./components/DomainCheck";
-import Graphics from "./components/Graphics";
-import Dictionary from "./components/Dictionary";
+
 export default {
   props: {
     source: String
-  },
-  components: {
-    CheckList,
-    ControlCheck,
-    DomainCheck,
-    Graphics,
-    Dictionary
   },
   data: () => ({
     drawer: null,
