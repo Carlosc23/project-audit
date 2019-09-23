@@ -27,7 +27,6 @@
           <b-th variant="danger"></b-th>
         </b-tr>
       </b-tbody>
-   
     </b-table-simple>
   </div>
 </template>

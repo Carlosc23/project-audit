@@ -45,69 +45,45 @@
           <b-th rowspan="2">5.1.1</b-th>
           <b-td class="text-left" rowspan="2">Documento de la Política de Seguridad de Información</b-td>
           <b-td>Existe una Política de Seguridad de la Información, que es aprobada por la dirección, publicada y comunicada según proceda, a todos los empleados?</b-td>
+          <b-td>{{observation}}</b-td>
+          <b-td variant="danger" v-if="state>=0 && state<=25">{{state}}</b-td>
+          <b-td variant="warning" v-else-if="state>=26 && state<=75">{{state}}</b-td>
+          <b-td variant="success" v-else-if="state>=76 && state<=100">{{state}}</b-td>
           <b-td>
-            {{observation}}
-          </b-td>
-          <b-td variant="danger" v-if="state>=0 && state<=25">
-            {{state}}
-          </b-td >
-          <b-td variant="warning" v-else-if="state>=26 && state<=75">
-            {{state}}
-          </b-td >
-          <b-td variant="success" v-else-if="state>=76 && state<=100">
-            {{state}}
-          </b-td >
-          <b-td >
             <b-button v-b-modal.modal-prevent-closing>Editar</b-button>
-   <b-modal
-      id="modal-prevent-closing"
-      ref="modal"
-      title="Observaciones y punteo de pregunta de auditoría"
-      @ok="handleOk"
-    >
-      <form ref="form" @submit.stop.prevent="handleSubmit">
-        <b-form-group
-          label="Observaciones"
-          label-for="observation-input"
-          invalid-feedback="Observation is required"
-        >
-          <b-form-input
-            id="observation-input"
-            v-model="observation"
-            required
-          ></b-form-input>
-          
-        </b-form-group>
-        <b-form-group
-          :state="stateState"
-          label="Estado (%)"
-          label-for="state-input"
-          invalid-feedback="Name is required"
-        >
-          <b-form-input
-            id="state-input"
-            v-model="state"
-            :state="stateState"
-            required
-          ></b-form-input>
-          
-        </b-form-group>
-      </form>
-    </b-modal>
+            <b-modal
+              id="modal-prevent-closing"
+              ref="modal"
+              title="Observaciones y punteo de pregunta de auditoría"
+              @ok="handleOk"
+            >
+              <form ref="form" @submit.stop.prevent="handleSubmit">
+                <b-form-group
+                  label="Observaciones"
+                  label-for="observation-input"
+                  invalid-feedback="Observation is required"
+                >
+                  <b-form-input id="observation-input" v-model="observation" required></b-form-input>
+                </b-form-group>
+                <b-form-group
+                  :state="stateState"
+                  label="Estado (%)"
+                  label-for="state-input"
+                  invalid-feedback="Name is required"
+                >
+                  <b-form-input id="state-input" v-model="state" :state="stateState" required></b-form-input>
+                </b-form-group>
+              </form>
+            </b-modal>
           </b-td>
         </b-tr>
         <b-tr>
           <b-td
             class="text-right"
           >Establecen las políticas un compromiso de las Gerencias con relación al método de la organización para la gestión de la seguridad de la información?</b-td>
-          <b-td>
-          </b-td>
-          <b-td variant="danger">
-  
-          </b-td>
-          <b-td >
-
-          </b-td>
+          <b-td></b-td>
+          <b-td variant="danger"></b-td>
+          <b-td></b-td>
         </b-tr>
       </b-tbody>
       <b-tfoot>
@@ -120,34 +96,32 @@
 </template>
 <script>
 export default {
-    data() {
-      return {
-        observation:'',
-        state:0
-      }
-    },
-   mounted() {
+  data() {
+    return {
+      observation: "",
+      state: 0
+    };
+  },
+  mounted() {
     if (localStorage.observation) {
-      this.observation = localStorage.observation || ''; 
+      this.observation = localStorage.observation || "";
     }
     if (localStorage.state) {
       this.state = localStorage.state || 0;
     }
   },
-  methods:{
-   
+  methods: {
     handleOk(bvModalEvt) {
-        // Prevent modal from closing
-        bvModalEvt.preventDefault()
-        
-        // Assign to localStorage the info
-        localStorage.observation = this.observation;
-        localStorage.state = this.state;
-        this.$nextTick(() => {
-          this.$refs.modal.hide()
-        })
-      },
+      // Prevent modal from closing
+      bvModalEvt.preventDefault();
 
+      // Assign to localStorage the info
+      localStorage.observation = this.observation;
+      localStorage.state = this.state;
+      this.$nextTick(() => {
+        this.$refs.modal.hide();
+      });
+    }
   }
-}
+};
 </script>
