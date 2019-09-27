@@ -30,61 +30,59 @@
           <b-th>Edición</b-th>
         </b-tr>
       </b-thead>
-      <b-tbody>
+      <b-tbody v-for="(dominio, indexDominio) in data.dominios">
         <b-tr>
-          <b-th variant="success" class="text-left" colspan="7">Política de Seguridad</b-th>
+          <b-th variant="success" class="text-left" colspan="7">{{dominio.nombre}}</b-th>
         </b-tr>
-        <b-tr>
-          <b-th>1.1</b-th>
-          <b-th>5.1</b-th>
+        <template v-for="(control, indexControl) in dominio.controles">
+          <b-tr>
+            <b-th>{{`${indexDominio + 1}.${indexControl + 1}`}}</b-th>
+            <b-th>{{`${dominio.numero}.${indexControl + 1}`}}</b-th>
 
-          <b-th class="text-left" colspan="5">Políticas de Seguridad de Información</b-th>
-        </b-tr>
-        <b-tr>
-          <b-th rowspan="2">1.1.1</b-th>
-          <b-th rowspan="2">5.1.1</b-th>
-          <b-td class="text-left" rowspan="2">Documento de la Política de Seguridad de Información</b-td>
-          <b-td>Existe una Política de Seguridad de la Información, que es aprobada por la dirección, publicada y comunicada según proceda, a todos los empleados?</b-td>
-          <b-td>{{observation}}</b-td>
-          <b-td variant="danger" v-if="state>=0 && state<=25">{{state}}</b-td>
-          <b-td variant="warning" v-else-if="state>=26 && state<=75">{{state}}</b-td>
-          <b-td variant="success" v-else-if="state>=76 && state<=100">{{state}}</b-td>
-          <b-td>
-            <b-button v-b-modal.modal-prevent-closing>Editar</b-button>
-            <b-modal
-              id="modal-prevent-closing"
-              ref="modal"
-              title="Observaciones y punteo de pregunta de auditoría"
-              @ok="handleOk"
-            >
-              <form ref="form" @submit.stop.prevent="handleSubmit">
-                <b-form-group
-                  label="Observaciones"
-                  label-for="observation-input"
-                  invalid-feedback="Observation is required"
+            <b-th class="text-left" colspan="5">{{control.nombre}}</b-th>
+          </b-tr>
+          <template v-for="(seccion, indexSeccion) in control.secciones">
+            <b-tr v-for="(objetivo, indexObjetivo) in seccion.objetivos">
+              <b-th v-bind:style="{ color: seccionColor(indexObjetivo)}">{{`${indexDominio + 1}.${indexControl + 1}.${indexSeccion + 1}`}}</b-th>
+              <b-th v-bind:style="{ color: seccionColor(indexObjetivo)}">{{`${dominio.numero}.${indexControl + 1}.${indexSeccion + 1}`}}</b-th>
+              <b-td class="text-left" v-bind:style="{ color: seccionColor(indexObjetivo)}">{{seccion.nombre}}</b-td>
+              <b-td>{{objetivo.pregunta}}</b-td>
+              <b-td><input v-model="objetivo.observaciones"/></b-td>
+              <b-td variant="danger" v-if="objetivo.estado>=0 && objetivo.estado<=25"><input v-model="objetivo.estado"/></b-td>
+              <b-td variant="warning" v-else-if="objetivo.estado>=26 && objetivo.estado<=75"><input v-model="objetivo.estado"/></b-td>
+              <b-td variant="success" v-else-if="objetivo.estado>=76 && objetivo.estado<=100"><input v-model="objetivo.estado"/></b-td>
+              <b-td>
+                <b-button v-on:click="saveData">Guardar</b-button>
+                <b-modal
+                  id="modal-prevent-closing"
+                  ref=modal
+                  title="Observaciones y punteo de pregunta de auditoría"
+                  @ok="handleOk"
                 >
-                  <b-form-input id="observation-input" v-model="observation" required></b-form-input>
-                </b-form-group>
-                <b-form-group
-                  :state="stateState"
-                  label="Estado (%)"
-                  label-for="state-input"
-                  invalid-feedback="Name is required"
-                >
-                  <b-form-input id="state-input" v-model="state" :state="stateState" required></b-form-input>
-                </b-form-group>
-              </form>
-            </b-modal>
-          </b-td>
-        </b-tr>
-        <b-tr>
-          <b-td
-            class="text-right"
-          >Establecen las políticas un compromiso de las Gerencias con relación al método de la organización para la gestión de la seguridad de la información?</b-td>
-          <b-td></b-td>
-          <b-td variant="danger"></b-td>
-          <b-td></b-td>
-        </b-tr>
+                  <form ref="form" @submit.stop.prevent="handleSubmit">
+                    <b-form-group
+                      label="Observaciones"
+                      label-for="observation-input"
+                      invalid-feedback="Observation is required"
+                    >
+                      <b-form-input id="observation-input" v-model="objetivo.observaciones" required></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                      :state="stateState"
+                      label="Estado (%)"
+                      label-for="state-input"
+                      invalid-feedback="Name is required"
+                    >
+                      <b-form-input id="state-input" v-model="state" :state="stateState" required></b-form-input>
+                    </b-form-group>
+                  </form>
+                </b-modal>
+              </b-td>
+              
+            </b-tr>
+          </template>
+          
+        </template>
       </b-tbody>
       <b-tfoot>
         <b-tr>
@@ -98,6 +96,7 @@
 export default {
   data() {
     return {
+      data: {},
       observation: "",
       state: 0
     };
@@ -109,6 +108,13 @@ export default {
     if (localStorage.state) {
       this.state = localStorage.state || 0;
     }
+    if (localStorage.data) {
+      this.data = JSON.parse(localStorage.data)
+    }
+    else {
+      this.data = require('../politicas.json')
+      console.log(this.data.dominios[0].nombre)
+    }
   },
   methods: {
     handleOk(bvModalEvt) {
@@ -119,8 +125,20 @@ export default {
       localStorage.observation = this.observation;
       localStorage.state = this.state;
       this.$nextTick(() => {
-        this.$refs.modal.hide();
+        this.$refs.modal.forEach(modal =>{ modal.hide()});
       });
+    },
+    seccionColor(index) {
+      if (index == 0)
+        return '#212529'
+      else {
+        return '#f8f9fa'
+      }
+    },
+    saveData() {
+      console.log("saving data...")
+      localStorage.data = JSON.stringify(this.data);
+      console.log(localStorage.data)
     }
   }
 };

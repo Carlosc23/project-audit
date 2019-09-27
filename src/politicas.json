@@ -1,0 +1,408 @@
+{
+    "dominios": [
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "¿Existe una Política de Seguridad de la Información, que es aprobada por la dirección, publicada y comunicada según proceda, a todos los empleados?",
+                                    "observaciones":  "N/A",
+                                    "estado": 0
+                                },
+                                {
+                                    "pregunta": "¿Establecen las políticas un compromiso de las Gerencias con relación al método de la organización para la gestión de la seguridad de la información?",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Política de seguridad",
+            "numero": 5,
+            "controles": [
+                {
+                    "nombre": "Política de seguridad de Información",
+                    "secciones": [
+                        {
+                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "objetivos": [
+                                {
+                                    "pregunta": "",
+                                    "observaciones":  "",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
