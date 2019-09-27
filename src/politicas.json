@@ -17,7 +17,27 @@
                                 },
                                 {
                                     "pregunta": "¿Establecen las políticas un compromiso de las Gerencias con relación al método de la organización para la gestión de la seguridad de la información?",
-                                    "observaciones":  "",
+                                    "observaciones":  "N/A",
+                                    "estado": 0
+                                }
+                            ]
+                        },
+                        {
+                            "nombre": "Revisión de la Política de Seguridad",
+                            "objetivos": [
+                                {
+                                    "pregunta": "Las políticas de seguridad son revisadas a intervalos regulares, o cuando hay cambios significativos para asegurar la adecuación y efectividad?",
+                                    "observaciones":  "N/A",
+                                    "estado": 0
+                                },
+                                {
+                                    "pregunta": "Las políticas de Seguridad de la Información tiene un propietario, que ha aprobado la responsabilidad de la gestión para el desarrollo, revisión y evaluación de la política de seguridad",
+                                    "observaciones":  "N/A",
+                                    "estado": 0
+                                },
+                                {
+                                    "pregunta": "Los resultados del revisión de la gestión son tenidos en cuenta?",
+                                    "observaciones":  "N/A",
                                     "estado": 0
                                 }
                             ]
@@ -27,18 +47,18 @@
             ]
         },
         {
-            "nombre": "Política de seguridad",
+            "nombre": "Organización de la seguridad de Información",
             "numero": 5,
             "controles": [
                 {
-                    "nombre": "Política de seguridad de Información",
+                    "nombre": "Seguridad de la Información",
                     "secciones": [
                         {
-                            "nombre": "Documento de la Politica de Seguridad de Información",
+                            "nombre": "Gestión de compromiso don la seguridad de la información",
                             "objetivos": [
                                 {
-                                    "pregunta": "",
-                                    "observaciones":  "",
+                                    "pregunta": "Si la gerencia demuestra soporte activo a las medidas de seguridad dentro de la organización. Esto puede ser realizado por direcciones claras, compromiso demostrado, asignaciones explícitas y conocimiento de las responsabilidades de la seguridad de información.",
+                                    "observaciones":  "N/A",
                                     "estado": 0
                                 }
                             ]
