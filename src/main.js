@@ -2,6 +2,7 @@ import Vue from 'vue'
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
+import VueApexCharts from 'vue-apexcharts'
 import Vuex from 'vuex';
 import App from './App.vue'
 
@@ -9,6 +10,9 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 Vue.use(Vuex)
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
 
 const router = new VueRouter({
   mode: "history",
