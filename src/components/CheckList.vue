@@ -53,30 +53,6 @@
               <b-td variant="success" v-else-if="objetivo.estado>=76 && objetivo.estado<=100"><input v-model="objetivo.estado"/></b-td>
               <b-td>
                 <b-button v-on:click="saveData">Guardar</b-button>
-                <b-modal
-                  id="modal-prevent-closing"
-                  ref=modal
-                  title="Observaciones y punteo de pregunta de auditoría"
-                  @ok="handleOk"
-                >
-                  <form ref="form" @submit.stop.prevent="handleSubmit">
-                    <b-form-group
-                      label="Observaciones"
-                      label-for="observation-input"
-                      invalid-feedback="Observation is required"
-                    >
-                      <b-form-input id="observation-input" v-model="objetivo.observaciones" required></b-form-input>
-                    </b-form-group>
-                    <b-form-group
-                      :state="stateState"
-                      label="Estado (%)"
-                      label-for="state-input"
-                      invalid-feedback="Name is required"
-                    >
-                      <b-form-input id="state-input" v-model="state" :state="stateState" required></b-form-input>
-                    </b-form-group>
-                  </form>
-                </b-modal>
               </b-td>
               
             </b-tr>
@@ -108,7 +84,10 @@ export default {
     if (localStorage.state) {
       this.state = localStorage.state || 0;
     }
-    if (localStorage.data) {
+    if (this.$store.state.data !== null){
+      this.data = JSON.parse(this.$store.getters.data)
+    }
+    else if (localStorage.data) {
       this.data = JSON.parse(localStorage.data)
     }
     else {
@@ -137,9 +116,10 @@ export default {
     },
     saveData() {
       console.log("saving data...")
+      this.$store.replaceState({data:JSON.stringify(this.data)})
       localStorage.data = JSON.stringify(this.data);
-      console.log(localStorage.data)
-    }
+      console.log(this.$store.state.data)
+    }   
   }
 };
 </script>

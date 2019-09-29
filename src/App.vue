@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
     source: String
@@ -66,7 +67,18 @@ export default {
         icon: "mdi-book-search-outline"
       }
     ]
-  })
+  }),
+  computed: {
+    mapGetters:([
+      // Mounts the "safelyStoredNumber" getter to the scope of your component.
+      'data'
+    ])
+  },
+  methods: {
+    mapMutations:([
+      'setData'
+    ])
+  }
 };
 </script>
 

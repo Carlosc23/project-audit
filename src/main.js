@@ -1,12 +1,14 @@
 import Vue from 'vue'
-import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
+import Vuex from 'vuex';
+import App from './App.vue'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
+Vue.use(Vuex)
 
 const router = new VueRouter({
   mode: "history",
@@ -34,8 +36,23 @@ const router = new VueRouter({
   ]
 });
 
+const store = new Vuex.Store({
+  state: {
+    data: null
+  },
+  mutations: {
+    setData(state, newData) {
+      state.data = newData
+    }
+  },
+  getters: {
+      data: state => state.data
+  }
+});
+
 new Vue({
   vuetify,
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
