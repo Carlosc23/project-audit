@@ -89,10 +89,12 @@ export default {
     }
     else if (localStorage.data) {
       this.data = JSON.parse(localStorage.data)
+      this.saveData()
     }
     else {
       this.data = require('../politicas.json')
       console.log(this.data.dominios[0].nombre)
+      this.saveData()
     }
   },
   methods: {

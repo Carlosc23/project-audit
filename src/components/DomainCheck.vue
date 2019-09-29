@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Cumplimiento de control</h2>
+    <h2>Cumplimiento de dominio</h2>
     <b-table-simple hover small caption-top responsive>
       <colgroup>
         <col />
@@ -25,8 +25,10 @@
       <b-tbody>
         <b-tr v-for="(item, index) in items" :key="index">
           <b-th>{{index+1}}</b-th>
-          <b-th>{{item.title}}</b-th>
-          <b-th variant="danger"></b-th>
+          <b-th>{{item}}</b-th>
+          <b-th variant="danger" v-if="states[index]>=0 && states[index]<=25">{{states[index]}}</b-th>
+          <b-th variant="warning" v-else-if="states[index]>=26 && states[index]<=75">{{states[index]}}</b-th>
+          <b-th variant="success" v-else-if="states[index]>=76 && states[index]<=100">{{states[index]}}</b-th>
         </b-tr>
       </b-tbody>
     </b-table-simple>
@@ -39,42 +41,51 @@ export default {
   },
   data: () => ({
     drawer: null,
-    items: [
-      {
-        title: "Políticas de Seguridad"
-      },
-      {
-        title: "Organización de la Seguridad de Información"
-      },
-      {
-        title: "Manejo de Activos"
-      },
-      {
-        title: "Seguridad de Recursos Humanos"
-      },
-      {
-        title: "Seguridad Física y Ambiental"
-      },
-      {
-        title: "Gestión de Comunicaciones y Operaciones"
-      },
-      {
-        title: "Control de Acceso"
-      },
-      {
-        title:
-          "Desarrollo, Adquisición y Mantenimiento de Sistemas de Información"
-      },
-      {
-        title: "Gestión de Incidentes de Seguridad de Información"
-      },
-      {
-        title: "Gestión de la Continuidad del Negocio"
-      },
-      {
-        title: "Cumplimiento"
-      }
-    ]
-  })
+    data: {},
+    items: [],
+    states: []
+  }),
+  mounted() {
+    if (this.$store.state.data !== null) {
+      this.data = JSON.parse(this.$store.getters.data)
+      localStorage.data = JSON.stringify(this.data);
+    }
+    else if (localStorage.data) {
+      this.data = JSON.parse(localStorage.data)
+    }
+    else {
+      this.data = require('../politicas.json')
+      console.log(this.data.dominios[0].nombre)
+    }
+    this.items = this.controlNames()
+    this.states = this.getStates()
+  },
+  methods: {
+    controlNames() {
+      let names = []
+      this.data.dominios.forEach((dominio) => {
+        names.push(dominio.nombre)
+      })
+      console.log(names)
+      return names
+    },
+    getStates() {
+      let states = []
+      this.data.dominios.forEach((dominio) => {
+        let sumControl = 0
+        let cont = 0
+        dominio.controles.forEach((control) => {
+          control.secciones.forEach((seccion) => {
+            seccion.objetivos.forEach((objetivo) => {
+              sumControl += parseInt(objetivo.estado)
+              cont++
+            })
+          })
+        })
+        states.push(sumControl/cont)
+      })
+      return states
+    }
+  }
 };
 </script>

@@ -64,6 +64,21 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "nombre": "Partes externas",
+                    "secciones": [
+                        {
+                            "nombre": "Identificación de los riesgos relacionados con partes externas",
+                            "objetivos": [
+                                {
+                                    "pregunta": "Los riesgos inherentes a equipos o sistemas de información de terceros son identificados y luego implementadas medidas de control apropiadas antes de permitir el acceso?",
+                                    "observaciones":  "N/A",
+                                    "estado": 0
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

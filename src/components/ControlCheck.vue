@@ -24,7 +24,9 @@
       <b-tbody>
         <b-tr v-for="(name,index) in controlNames()">
           <b-th>{{name}}</b-th>
-          <b-th variant="danger">{{states[index]}}</b-th>
+          <b-th variant="danger" v-if="states[index]>=0 && states[index]<=25">{{states[index]}}</b-th>
+          <b-th variant="warning" v-else-if="states[index]>=26 && states[index]<=75">{{states[index]}}</b-th>
+          <b-th variant="success" v-else-if="states[index]>=76 && states[index]<=100">{{states[index]}}</b-th>
         </b-tr>
       </b-tbody>
     </b-table-simple>
