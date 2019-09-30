@@ -54,10 +54,8 @@
               <b-td>
                 <b-button v-on:click="saveData">Guardar</b-button>
               </b-td>
-              
             </b-tr>
           </template>
-          
         </template>
       </b-tbody>
       <b-tfoot>
@@ -93,7 +91,7 @@ export default {
     }
     else {
       this.data = require('../politicas.json')
-      console.log(this.data.dominios[0].nombre)
+      /* console.log(this.data.dominios[0].nombre) */
       this.saveData()
     }
   },
@@ -117,11 +115,11 @@ export default {
       }
     },
     saveData() {
-      console.log("saving data...")
+      /* console.log("saving data...") */
       this.$store.replaceState({data:JSON.stringify(this.data)})
       localStorage.data = JSON.stringify(this.data);
-      console.log(this.$store.state.data)
-    }   
+      /* console.log(this.$store.state.data) */
+    }
   }
 };
 </script>

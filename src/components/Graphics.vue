@@ -33,6 +33,7 @@ export default {
     this.chartOptions = {
       ...this.chartOptions,
       xaxis: {
+        ...this.chartOptions.xaxis,
         categories:  this.categoriesPerSection,
       },
     }
@@ -40,21 +41,22 @@ export default {
     this.series = [
       {
         name: 'compliance (%)',
-        data: this.weightsPerSection
-      }
+        data: this.weightsPerSection,
+      },
     ]
 
     this.chartControlOptions = {
       ...this.chartControlOptions,
       xaxis: {
-        categories: this.categoriesPerControl
-      }
+        ...this.chartOptions.xaxis,
+        categories: this.categoriesPerControl,
+      },
     }
 
     this.controlSeries = [
       {
         name: 'compliance(%)',
-        data: this.weightsPerControl
+        data: this.weightsPerControl,
       }
     ]
   },
@@ -93,14 +95,56 @@ export default {
   data() {
     return {
       chartOptions: {
+        title: {
+          text: 'Cumplimiento por sección',
+          align: 'middle'
+        },
         chart: {
           id: 'by-section'
-        }
+        },
+        yaxis: {
+          decimalsInFloat: 2,
+          min:0,
+          max: 100,
+          title: {
+            text: 'Cumplimiento (%)'
+          }
+        },
+        dataLabels: {
+          offsetY: 60,
+          formatter(val) {
+            return val.toFixed(2)
+          },
+          style: {
+            colors: ['#000000'],
+          },
+        },
       },
       chartControlOptions: {
+        title: {
+          text: 'Cumplimiento por control',
+          align: 'middle'
+        },
         chart: {
           id: 'by-control'
-        }
+        },
+        yaxis: {
+          decimalsInFloat: 2,
+          min:0,
+          max: 100,
+          title: {
+            text: 'Cumplimiento (%)'
+          }
+        },
+        dataLabels: {
+          offsetY: 60,
+          formatter(val) {
+            return val.toFixed(2)
+          },
+          style: {
+            colors: ['#000000']
+          },
+        },
       },
       series: [],
       controlSeries: []
