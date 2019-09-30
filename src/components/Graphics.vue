@@ -13,7 +13,6 @@
 
   </div>
 </template>
-
 <script>
 export default {
   created() {
@@ -83,10 +82,10 @@ export default {
             num += section.objetivos.length;
             numControl += section.objetivos.length
           }
-          let controlWeight = sumControl / (numControl * 100)
+          let controlWeight = sumControl / (numControl * 100) * 100
           this.weightsPerControl.push(controlWeight)
         }
-        let sectionWeight = sum / (num * 100)
+        let sectionWeight = sum / (num * 100) * 100
         this.weightsPerSection.push(sectionWeight)
       }
     }
